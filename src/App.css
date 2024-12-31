@@ -375,6 +375,7 @@ form {
   max-width: 450px; /* Slightly wider than login view for multi-field alignment */
   width: 100%;
   text-align: center;
+  height: 100%
 }
 
 h1 {
@@ -432,6 +433,36 @@ button:hover {
 
 button:active {
   transform: scale(0.98);
+}
+
+/* Genres Section */
+.genres {
+  margin-top: 20px;
+  text-align: left; /* Align the label to the left */
+}
+
+.genres label {
+  font-size: 1rem;
+  color: #f4a261; /* Muted coral color */
+}
+
+.genre-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid layout */
+  gap: 15px; /* Space between checkboxes */
+  margin-top: 10px;
+}
+
+.genre-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.genre-item input {
+  margin-right: 8px;
+  accent-color: #f4a261; /* Match theme for checkbox color */
 }
 
 
