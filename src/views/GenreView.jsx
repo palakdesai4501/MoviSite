@@ -1,6 +1,8 @@
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useContext } from "react";
+import { UserContext } from "../contexts/UserContext";
 
 function GenreView() {
   const { genre_id } = useParams(); // Get the genre_id from the URL
@@ -8,6 +10,32 @@ function GenreView() {
   const [currentPage, setCurrentPage] = useState(1); // Track pagination
   const [totalPages, setTotalPages] = useState(1); // Total pages from API
   const [error, setError] = useState(null); // Track errors
+
+
+// useContext to store selected movies
+
+const { user, setUser } = useContext(UserContext);
+
+  /**
+   * 6. Add a button with the text “Buy” to the bottom of each poster tile that, when clicked,
+adds the movie to the shopping cart. Once a movie has been added to the cart, the
+button should say “Added” unless the item is removed from the cart.
+   */
+
+  const [cart, setCart] = useState([]); // Cart state
+
+  
+  // Function to add a movie to the cart
+  const addToCart = (movie) => {
+    if (!cart.find((item) => item.id === movie.id)) {
+      // Add movie to cart if it's not already there
+      setCart([...cart, movie]);
+      setUser([...user, movie]);
+      console.log("cart", user);
+    }
+  };
+
+
 
   const moviesPerPage = 20; // Number of movies per page
 
@@ -40,6 +68,7 @@ function GenreView() {
   };
 
   return (
+    <>
     <div className="genre-view container">
       <h2>Movies in Genre: {genre_id}</h2>
 
@@ -50,6 +79,7 @@ function GenreView() {
       <div className="movie-grid">
         {movies.length > 0
           ? movies.map((movie) => (
+            <div>
               <Link
                 to={`/movies/details/${movie.id}`}
                 key={movie.id}
@@ -61,10 +91,20 @@ function GenreView() {
                   className="movie-image"
                 />
                 <h3>{movie.title}</h3>
+                
               </Link>
+              <button
+              onClick={() => addToCart(movie)}
+              disabled={cart.find((item) => item.id === movie.id)}
+              className="buy-btn"
+            >
+              {cart.find((item) => item.id === movie.id) ? "Added" : "Buy"}
+            </button>
+              </div>
             ))
           : !error && <p>No movies found for this genre.</p>}
       </div>
+    
 
       {/* Pagination */}
       <div className="pagination">
@@ -85,6 +125,7 @@ function GenreView() {
         </button>
       </div>
     </div>
+    </>
   );
 }
 

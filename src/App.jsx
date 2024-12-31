@@ -6,6 +6,7 @@ import RegisterView from './views/RegisterView';
 import MoviesView from './views/MoviesView';
 import GenreView from './views/GenreView';
 import DetailView from './views/DetailView';
+import CartView from './views/CartView';
 import { UserProvider } from './contexts/UserContext'; // Import UserProvider
 import './App.css';
 
@@ -28,6 +29,7 @@ function App() {
           />
           <Route path="/movies/genre/:genre_id" element={<GenreView />} />
           <Route path="/movies/details/:id" element={<DetailView />} />
+          <Route path="/cart" element={<CartView />}></Route>
         </Routes>
       </Router>
     </UserProvider>

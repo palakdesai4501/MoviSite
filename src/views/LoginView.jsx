@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { UserContext } from '../contexts/UserContext';
 
 function LoginView({ setIsLoggedIn }) {
+  // const userContext = useContext(UserContext);
+  // console.log(userContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
