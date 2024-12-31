@@ -1,0 +1,592 @@
+/* Global Styles */
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Spartan', Helvetica, sans-serif;
+  background-color: #121212; /* Consistent dark background */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+  color: white;
+  line-height: 1.6;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #252525; /* Match the dark theme */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8); /* Subtle shadow for depth */
+  height: 8vh;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #f4a261; /* Muted coral for title */
+}
+
+header nav {
+  display: flex;
+  gap: 30px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  padding: 5px 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 5px;
+}
+
+header nav a:hover {
+  background-color: #f4a261;
+  color: #121212; /* Contrast with the coral background */
+}
+
+
+
+/* Hero Section */
+.hero-image {
+  background-image: url("./assets/Sand.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Full screen height */
+  width: 100%; /* Full screen width */
+  position: relative;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #5a4636; /* Warm earthy tone matching sand */
+  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8); /* Softer shadow for contrast */
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.hero-text button {
+  margin: 15px 10px;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #f4a261; /* Muted coral */
+  color: #fff8e7; /* Off-white for softer contrast */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.hero-text button:hover {
+  background-color: #e76f51; /* Slightly darker coral for hover */
+  transform: scale(1.1);
+}
+
+
+/* Features Section */
+.features {
+  padding: 50px 20px;
+  background-color: #1e1e1e;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.movie-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.movie-gallery .movie {
+  background-color: #2a2a2a;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.movie-gallery .movie:hover {
+  transform: scale(1.05);
+}
+
+.movie-gallery img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.movie-gallery h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: white;
+}
+
+/* Genres Section */
+.genres {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #1e1e1e; /* Dark background for separation */
+  height: 70vh;
+}
+
+.genres h1 {
+  font-size: 2.5rem;
+  color: #f4a261; /* Muted coral */
+  margin-bottom: 30px;
+}
+
+.genre-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.genre-button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 15px 0;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+.genre-button:hover {
+  background-color: #ff7e5f; /* Highlighted coral */
+  transform: scale(1.05);
+}
+
+
+/* Movie Grid */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* Movie Grid */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns */
+  gap: 20px;
+  padding: 20px 0;
+  justify-items: center; /* Center items horizontally */
+}
+
+.movie-card {
+  background-color: #2a2a2a;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+  width: 200px; /* Consistent card width */
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px; /* Adjust height for consistent size */
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.movie-card h3 {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  color: white;
+}
+
+
+
+/* Pagination */
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* Add spacing between buttons */
+}
+
+.pagination-btn {
+  background-color: #ff7e5f;
+  color: white;
+  border: none;
+  padding: 8px 12px; /* Smaller padding */
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 25px; /* Rounded buttons */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pagination-btn:hover {
+  background-color: #e76f51;
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.pagination-btn:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.pagination span {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  margin: 0; /* Remove extra margin or padding */
+  line-height: 1; /* Ensure line height fits text size */
+  white-space: nowrap; /* Prevent wrapping of the text */
+}
+
+
+/* Login View */
+.login-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-color: #1e1e1e; /* Consistent dark theme */
+  padding: 20px;
+}
+
+form {
+  background-color: #252525; /* Slightly lighter background for contrast */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8); /* Subtle shadow for depth */
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #f4a261; /* Muted coral for title */
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #f4a261; /* Muted coral for labels */
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #1e1e1e; /* Match dark theme */
+  color: white;
+  margin-top: 5px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border-color: #f4a261; /* Highlighted coral on focus */
+  box-shadow: 0 0 8px rgba(244, 162, 97, 0.7);
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #f4a261; /* Muted coral button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #e76f51; /* Slightly darker coral */
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Register View */
+.register-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-color: #1e1e1e; /* Consistent dark theme */
+  padding: 20px;
+}
+
+form {
+  background-color: #252525; /* Slightly lighter background for contrast */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8); /* Subtle shadow for depth */
+  max-width: 450px; /* Slightly wider than login view for multi-field alignment */
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #f4a261; /* Muted coral for title */
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #f4a261; /* Muted coral for labels */
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #1e1e1e; /* Match dark theme */
+  color: white;
+  margin-top: 5px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border-color: #f4a261; /* Highlighted coral on focus */
+  box-shadow: 0 0 8px rgba(244, 162, 97, 0.7);
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #f4a261; /* Muted coral button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #e76f51; /* Slightly darker coral */
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+
+/* Footer */
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px; /* Ensure consistent footer height */
+  background-color: #252525; /* Slightly lighter background */
+  color: white;
+  border-top: 2px solid #f4a261; /* Coral border for separation */
+  font-size: 0.9rem;
+}
+
+.footer-container a {
+  color: #f4a261;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.footer-container a:hover {
+  color: #feb47b; /* Slightly lighter coral for hover */
+}
+
+.detail-view {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #1e1e1e; /* Dark background for card */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8); /* Shadow for depth */
+  color: white;
+  text-align: left;
+}
+
+.detail-view h1 {
+  font-size: 2.5rem;
+  color: #f4a261; /* Muted coral for the title */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.detail-view p {
+  font-size: 1.2rem;
+  line-height: 1.8; /* Adjusted line-height for better readability */
+  margin: 15px 0;
+  text-align: justify; /* Justify the text */
+}
+
+.detail-view p strong {
+  display: block; /* Ensures "Overview:" appears on its own line */
+  margin-bottom: 10px; /* Adds spacing below "Overview:" */
+  color: #f4a261; /* Highlighted text */
+}
+
+.detail-view .metadata {
+  margin-bottom: 30px; /* Added more spacing below metadata */
+}
+
+
+.detail-view .metadata p {
+  margin: 0;
+}
+
+.trailers {
+  margin-top: 30px;
+}
+
+.trailers h2 {
+  font-size: 2rem;
+  color: #f4a261;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.trailers .trailer {
+  margin-bottom: 20px;
+}
+
+.trailers iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  border-radius: 5px;
+}
+
+.trailers h3 {
+  font-size: 1.5rem;
+  color: #fff8e7; /* Off-white text */
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .movie-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .movie img {
+    height: 200px;
+  }
+
+  .login-view {
+    padding: 10px;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  .register-view {
+    padding: 10px;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .genres h1 {
+    font-size: 2rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header nav {
+    gap: 10px;
+  }
+
+  .genre-buttons {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .detail-view {
+    padding: 20px;
+  }
+
+  .detail-view h1 {
+    font-size: 2rem;
+  }
+
+  .trailers iframe {
+    height: 250px;
+  }
+
+  .detail-view .metadata {
+    grid-template-columns: 1fr; /* Single-column layout for small screens */
+  }
+}
