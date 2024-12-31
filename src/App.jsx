@@ -9,6 +9,7 @@ import DetailView from './views/DetailView';
 import CartView from './views/CartView';
 import { UserProvider } from './contexts/UserContext'; // Import UserProvider
 import './App.css';
+import SettingsView from './views/SettingsView';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Manage login state
@@ -30,6 +31,7 @@ function App() {
           <Route path="/movies/genre/:genre_id" element={<GenreView />} />
           <Route path="/movies/details/:id" element={<DetailView />} />
           <Route path="/cart" element={<CartView />}></Route>
+          <Route path="settings" element={<SettingsView />}></Route>
         </Routes>
       </Router>
     </UserProvider>
