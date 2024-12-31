@@ -13,6 +13,7 @@ function Genres({ genres /**prop */ }) {
       <h1>Genres</h1>
       <div className="genre-buttons">
         {genres.map((genre) => (
+
           <button
             key={genre.id}
             onClick={() => handleGenreClick(genre.id)}

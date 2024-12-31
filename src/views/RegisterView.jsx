@@ -3,10 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 
 function RegisterView() {
-
-  const genresList = [
-   'Action', 'Adventure', 'Animation', 'Comedy', 'Documentary', 
-  'Drama', 'Fantasy', 'Horror', 'Mystery', 'Romance', 'Sci-Fi', 'Thriller'
+  const genreList = [
+    { genre: 'Action', id: 28 },
+    { genre: 'Crime', id: 80 },
+    { genre: 'Horror', id: 27 },
+    { genre: 'Thriller', id: 53 },
+    { genre: 'Adventure', id: 12 },
+    { genre: 'Family', id: 10751 },
+    { genre: 'Music', id: 10402 },
+    { genre: 'War', id: 10752 },
+    { genre: 'Animation', id: 16 },
+    { genre: 'Fantasy', id: 14 },
   ];
 
   const [formData, setFormData] = useState({
@@ -15,45 +22,40 @@ function RegisterView() {
     email: '',
     password: '',
     confirmPassword: '',
-    genres: genresList.map((genre) => ({ genre: genre, selected: false })),
-    selectedMovies: []
+    genres: genreList.map((genre) => ({ ...genre, selected: false })), // Preserve id and genre
+    selectedMovies: [],
   });
-
 
   const [errors, setErrors] = useState('');
   const navigate = useNavigate();
   const { setUser } = useContext(UserContext);
-  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
   const handleGenreChange = (e) => {
     const { value, checked } = e.target;
-    setFormData((prev) => {
-      // if genre is checked its value should be true otherwise false
-      // All the genre should be saved with either true or false 
-
-      return {
-        ...prev,
-        genres: prev.genres.map((genre) => {
-          if (genre.genre === value) {
-            return { genre: genre.genre, selected: checked };
-          }
-          return genre;
-        })
-      };
-    
-    });
+    setFormData((prev) => ({
+      ...prev,
+      genres: prev.genres.map((genre) =>
+        genre.id.toString() === value ? { ...genre, selected: checked } : genre
+      ),
+    }));
   };
 
   const validateForm = () => {
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.password || !formData.confirmPassword) {
+    if (
+      !formData.firstName ||
+      !formData.lastName ||
+      !formData.email ||
+      !formData.password ||
+      !formData.confirmPassword
+    ) {
       setErrors('All fields are required.');
       return false;
     }
@@ -61,8 +63,8 @@ function RegisterView() {
       setErrors('Passwords do not match.');
       return false;
     }
-    if (formData.genres.length < 3) {
-      setErrors('Please select at least 10 genres.');
+    if (formData.genres.filter((genre) => genre.selected).length < 3) {
+      setErrors('Please select at least 3 genres.');
       return false;
     }
     setErrors('');
@@ -145,23 +147,21 @@ function RegisterView() {
           />
         </div>
         <div className="form-group genres">
-          <label>Select Your Favorite Genres (at least 10):</label>
+          <label>Select Your Favorite Genres (at least 3):</label>
           <div className="genre-list">
             {formData.genres.map((genre) => (
-              <div key={genre.genre}>
+              <div key={genre.id}>
                 <input
                   type="checkbox"
-                  id={genre.genre}
+                  id={genre.id.toString()}
                   name={genre.genre}
-                  value={genre.genre}
+                  value={genre.id}
                   checked={genre.selected}
                   onChange={handleGenreChange}
                 />
-                <label htmlFor={genre.genre}>{genre.genre}</label>
+                <label htmlFor={genre.id.toString()}>{genre.genre}</label>
               </div>
             ))}
-           
-            
           </div>
         </div>
         <button type="submit">Register</button>

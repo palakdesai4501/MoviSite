@@ -32,6 +32,7 @@ function App() {
           <Route path="/movies/details/:id" element={<DetailView />} />
           <Route path="/cart" element={<CartView />}></Route>
           <Route path="settings" element={<SettingsView />}></Route>
+          
         </Routes>
       </Router>
     </UserProvider>
