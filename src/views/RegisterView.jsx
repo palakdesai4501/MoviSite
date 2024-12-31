@@ -9,8 +9,11 @@ function RegisterView() {
     email: '',
     password: '',
     confirmPassword: '',
-    genres: []
+    genres: [],
+    selectedMovies: []
   });
+
+
   const [errors, setErrors] = useState('');
   const navigate = useNavigate();
   const { setUser } = useContext(UserContext);

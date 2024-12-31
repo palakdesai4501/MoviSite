@@ -9,6 +9,7 @@ function Header() {
         <Link to="/movies">Movies</Link>
         <Link to="/login">Login</Link>
         <Link to="/register">Register</Link>
+        <Link to="/cart">Cart</Link>
       </nav>
     </header>
   );

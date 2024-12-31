@@ -1,8 +1,9 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
+import { useNavigate } from "react-router-dom";
 
 function GenreView() {
   const { genre_id } = useParams(); // Get the genre_id from the URL
@@ -15,7 +16,8 @@ function GenreView() {
 // useContext to store selected movies
 
 const { user, setUser } = useContext(UserContext);
-
+const navigate = useNavigate();
+console.log("user", user);
   /**
    * 6. Add a button with the text “Buy” to the bottom of each poster tile that, when clicked,
 adds the movie to the shopping cart. Once a movie has been added to the cart, the
@@ -30,8 +32,15 @@ button should say “Added” unless the item is removed from the cart.
     if (!cart.find((item) => item.id === movie.id)) {
       // Add movie to cart if it's not already there
       setCart([...cart, movie]);
-      setUser([...user, movie]);
-      console.log("cart", user);
+      // add selected movies as in entry in the user context object and persiste old selected genre in the context object
+      
+      if (user) {
+        // Add selected movies as an entry in the user context object and persist old selected genre in the context object
+        setUser({ ...user, selectedMovies: [...user.selectedMovies, movie] });
+      } else {
+        alert("User is not logged in");
+      }
+      // navigate("/cart");
     }
   };
 
