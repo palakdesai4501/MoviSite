@@ -18,11 +18,6 @@ function GenreView() {
 const { user, setUser } = useContext(UserContext);
 const navigate = useNavigate();
 console.log("user", user);
-  /**
-   * 6. Add a button with the text “Buy” to the bottom of each poster tile that, when clicked,
-adds the movie to the shopping cart. Once a movie has been added to the cart, the
-button should say “Added” unless the item is removed from the cart.
-   */
 
   const [cart, setCart] = useState([]); // Cart state
 
