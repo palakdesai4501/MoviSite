@@ -32,6 +32,7 @@ header {
   background-color: #252525; /* Match the dark theme */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8); /* Subtle shadow for depth */
   height: 8vh;
+  position: sticky;
 }
 
 header h1 {
@@ -161,7 +162,7 @@ header nav a:hover {
   padding: 50px 20px;
   text-align: center;
   background-color: #1e1e1e; /* Dark background for separation */
-  height: 70vh;
+  height: 67vh;
 }
 
 .genres h1 {
