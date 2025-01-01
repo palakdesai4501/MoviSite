@@ -11,10 +11,10 @@ body, html {
   box-sizing: border-box;
 }
 
-/* #root{
+#root{
   background-color: #1e1e1e;
   height: 228vh;
-} */
+}
 
 .container {
   max-width: 1200px;
@@ -408,6 +408,179 @@ header nav a:hover {
 }
 
 .remove-btn:active {
+  transform: scale(0.95); /* Slight shrink on click */
+}
+
+/* Settings View Container */
+.settings-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-color: #1e1e1e; /* Dark background theme */
+  padding: 20px;
+}
+
+/* Settings Form */
+.settings-form {
+  background-color: #252525; /* Slightly lighter for contrast */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8); /* Depth shadow */
+  max-width: 450px; /* Consistent form width */
+  width: 100%;
+  text-align: center;
+}
+
+/* Settings Title */
+.settings-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #f4a261; /* Muted coral for title */
+}
+
+/* Form Group */
+.settings-form-group {
+  margin-bottom: 20px;
+  text-align: left; /* Align labels to the left */
+}
+
+/* Form Label */
+.settings-form-label {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #f4a261; /* Muted coral */
+  display: block; /* Labels appear above input */
+}
+
+/* Input Fields */
+.settings-input {
+  width: 96%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #1e1e1e; /* Dark input background */
+  color: white;
+  margin-top: 5px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.settings-input:focus {
+  border-color: #f4a261; /* Highlight coral on focus */
+  box-shadow: 0 0 8px rgba(244, 162, 97, 0.7);
+  outline: none;
+}
+
+/* Disabled Input */
+.settings-input[disabled] {
+  background-color: #333;
+  color: #888; /* Grey text for disabled fields */
+  cursor: not-allowed;
+}
+
+/* Genre Section */
+.settings-genres {
+  padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    width: 95%;
+}
+
+.settings-genre-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid layout */
+  gap: 15px; /* Space between checkboxes */
+  margin-top: 10px;
+}
+
+.settings-genre-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.settings-genre-checkbox {
+  margin-right: 8px;
+  accent-color: #f4a261; /* Coral checkbox color */
+}
+
+/* Save Button */
+.settings-save-button {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #f4a261; /* Coral button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.settings-save-button:hover {
+  background-color: #e76f51; /* Darker coral on hover */
+  transform: scale(1.05);
+}
+
+.settings-save-button:active {
+  transform: scale(0.98); /* Slight shrink on click */
+}
+
+
+/* Genre List */
+.genre-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Spacing between genres */
+}
+
+/* Genre Item */
+.genre-item {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Spacing between checkbox and label */
+  font-size: 0.9rem;
+  color: white;
+}
+
+/* Genre Checkbox */
+.genre-checkbox {
+  accent-color: #f4a261; /* Coral for checkbox */
+  transform: scale(1.2); /* Slightly larger checkbox */
+}
+
+/* Genre Label */
+.genre-label {
+  cursor: pointer;
+}
+
+/* Save Button */
+.save-button {
+  background-color: #f4a261;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.save-button:hover {
+  background-color: #e76f51;
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.save-button:active {
   transform: scale(0.95); /* Slight shrink on click */
 }
 
