@@ -146,7 +146,7 @@ function RegisterView() {
             required
           />
         </div>
-        <div className="form-group genres">
+        <div className="form-genre">
           <label>Select Your Favorite Genres (at least 3):</label>
           <div className="genre-list">
             {formData.genres.map((genre) => (

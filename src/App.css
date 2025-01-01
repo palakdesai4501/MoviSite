@@ -387,6 +387,7 @@ h1 {
 .form-group {
   margin-bottom: 20px;
   text-align: left;
+  
 }
 
 label {
@@ -465,6 +466,17 @@ button:active {
   accent-color: #f4a261; /* Match theme for checkbox color */
 }
 
+.form-genre{
+  padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    width: 90%;
+}
 
 /* Footer */
 .footer-container {
