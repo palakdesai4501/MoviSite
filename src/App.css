@@ -362,7 +362,7 @@ button:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height */
+  height: 70v; /* Full viewport height */
   background-color: #1e1e1e; /* Consistent dark theme */
   padding: 20px;
 }
