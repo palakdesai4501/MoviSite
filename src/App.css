@@ -397,7 +397,7 @@ label {
 }
 
 input {
-  width: 100%;
+  width: 96%;
   padding: 12px;
   font-size: 1rem;
   border: 1px solid #333;
@@ -475,7 +475,7 @@ button:active {
     color: white;
     margin-top: 5px;
     margin-bottom: 20px;
-    width: 90%;
+    width: 95%;
 }
 
 /* Footer */
