@@ -63,7 +63,7 @@ function RegisterView() {
       setErrors('Passwords do not match.');
       return false;
     }
-    if (formData.genres.filter((genre) => genre.selected).length < 3) {
+    if (formData.genres.filter((genre) => genre.selected).length < 10) {
       setErrors('Please select at least 3 genres.');
       return false;
     }
@@ -147,7 +147,7 @@ function RegisterView() {
           />
         </div>
         <div className="form-genre">
-          <label>Select Your Favorite Genres (at least 3):</label>
+          <label>Select Your Favorite Genres (at least 10):</label>
           <div className="genre-list">
             {formData.genres.map((genre) => (
               <div key={genre.id}>

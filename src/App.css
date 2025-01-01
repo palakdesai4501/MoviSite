@@ -1,7 +1,5 @@
 /* Global Styles */
 body, html {
-  height: 100%;
-  width: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Spartan', Helvetica, sans-serif;
@@ -11,6 +9,11 @@ body, html {
   line-height: 1.6;
   overflow-x: hidden;
   box-sizing: border-box;
+}
+
+#root{
+  background-color: #1e1e1e;
+  height: 100vh;
 }
 
 .container {
@@ -284,7 +287,6 @@ header nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height */
   background-color: #1e1e1e; /* Consistent dark theme */
   padding: 20px;
 }
@@ -297,6 +299,7 @@ form {
   max-width: 400px;
   width: 100%;
   text-align: center;
+  margin-top: 70px
 }
 
 h1 {
