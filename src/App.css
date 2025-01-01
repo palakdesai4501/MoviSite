@@ -11,10 +11,10 @@ body, html {
   box-sizing: border-box;
 }
 
-#root{
+/* #root{
   background-color: #1e1e1e;
   height: 228vh;
-}
+} */
 
 .container {
   max-width: 1200px;
@@ -314,6 +314,101 @@ header nav a:hover {
   font-size: 1rem;
   font-weight: bold;
   color: white;
+}
+
+
+/* Cart Container */
+.cart-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #1e1e1e; /* Match dark theme */
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8); /* Subtle shadow for depth */
+}
+
+/* Cart Title */
+.cart-title {
+  font-size: 1.8rem; /* Slightly smaller font size */
+  margin-bottom: 15px;
+  text-align: center;
+  color: #f4a261; /* Muted coral for title */
+}
+
+/* Empty Cart Message */
+.empty-cart {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 50px;
+  color: #f4a261; /* Muted coral */
+}
+
+/* Cart Grid */
+.cart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjusted column width */
+  gap: 15px; /* Reduced gap for compact layout */
+  justify-content: center;
+  align-items: start;
+}
+
+/* Cart Card */
+.cart-card {
+  background-color: #2a2a2a;
+  text-align: center;
+  padding: 10px; /* Reduced padding */
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-card:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Movie Image */
+.cart-movie-image {
+  width: 100%;
+  height: 150px; /* Reduced height */
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px; /* Add spacing below image */
+}
+
+/* Movie Title */
+.cart-movie-title {
+  font-size: 1rem; /* Slightly smaller font size */
+  margin: 5px 0; /* Reduced margin */
+  color: white;
+  text-align: center;
+  line-height: 1.2; /* Adjust line height */
+}
+
+/* Remove Button */
+.remove-btn {
+  background-color: #f4a261;
+  color: white;
+  border: none;
+  padding: 8px 15px; /* Smaller padding */
+  font-size: 0.9rem; /* Reduced font size */
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.remove-btn:hover {
+  background-color: #e76f51;
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.remove-btn:active {
+  transform: scale(0.95); /* Slight shrink on click */
 }
 
 
@@ -686,5 +781,18 @@ button:active {
 
   .buy-btn {
     font-size: 0.8rem; /* Smaller button text */
+  }
+
+  .cart-movie-image {
+    height: 200px; /* Adjust image height for smaller screens */
+  }
+
+  .cart-title {
+    font-size: 1.5rem;
+  }
+
+  .remove-btn {
+    font-size: 0.9rem; /* Adjust button font size */
+    padding: 8px 15px;
   }
 }
