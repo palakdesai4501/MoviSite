@@ -13,7 +13,6 @@ body, html {
 
 #root{
   background-color: #1e1e1e;
-  height: 100vh;
 }
 
 .container {
@@ -196,21 +195,15 @@ header nav a:hover {
 }
 
 
-/* Movie Grid */
-.movie-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 20px 0;
-}
 
 /* Movie Grid */
 .movie-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 columns */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid layout */
   gap: 20px;
   padding: 20px 0;
-  justify-items: center; /* Center items horizontally */
+  justify-items: center; /* Center align all cards */
+  align-items: center;
 }
 
 .movie-card {
@@ -219,26 +212,65 @@ header nav a:hover {
   padding: 15px;
   border-radius: 10px;
   transition: transform 0.2s ease;
-  width: 200px; /* Consistent card width */
+  width: 190px; /* Fixed width for consistency */
+  height: 320px; /* Fixed height for consistency */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Space out content */
+  align-items: center; /* Center align items */
+  margin-bottom: 10px;
 }
 
 .movie-card:hover {
   transform: scale(1.05);
 }
 
+
 .movie-card img {
   width: 100%;
-  height: 300px; /* Adjust height for consistent size */
+  height: 250px; /* Fixed height for consistent image size */
   object-fit: cover;
   border-radius: 5px;
 }
 
 .movie-card h3 {
   margin: 10px 0;
-  font-size: 1.1rem;
+  font-size: 1rem; /* Reduce font size for titles */
   color: white;
+  text-align: center;
+  height: auto; /* Allow height to adjust based on content */
+  line-height: 1.2; /* Adjust line spacing */
+  overflow: hidden; /* Hide extra content */
+  text-overflow: ellipsis; /* Add ellipsis if still too long */
+  word-wrap: break-word; /* Ensure long words break properly */
+  overflow-wrap: break-word; /* Alternative for word wrapping */
 }
 
+
+.buy-btn {
+  background-color: #f4a261; /* Muted coral */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 50%; /* Consistent button width */
+ 
+}
+
+.buy-btn:hover {
+  background-color: #e76f51;
+  transform: scale(1.05);
+}
+
+.buy-btn:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+  transform: none;
+}
 
 
 /* Pagination */
@@ -247,24 +279,25 @@ header nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px; /* Add spacing between buttons */
+  gap: 15px; /* Adjust spacing between buttons */
 }
 
+
 .pagination-btn {
-  background-color: #ff7e5f;
+  background-color: #f4a261;
   color: white;
   border: none;
-  padding: 8px 12px; /* Smaller padding */
+  padding: 8px 16px;
   font-size: 0.9rem;
   font-weight: bold;
-  border-radius: 25px; /* Rounded buttons */
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .pagination-btn:hover {
   background-color: #e76f51;
-  transform: scale(1.1); /* Slight zoom on hover */
+  transform: scale(1.1);
 }
 
 .pagination-btn:disabled {
@@ -277,9 +310,6 @@ header nav a:hover {
   font-size: 1rem;
   font-weight: bold;
   color: white;
-  margin: 0; /* Remove extra margin or padding */
-  line-height: 1; /* Ensure line height fits text size */
-  white-space: nowrap; /* Prevent wrapping of the text */
 }
 
 
@@ -635,5 +665,22 @@ button:active {
 
   .detail-view .metadata {
     grid-template-columns: 1fr; /* Single-column layout for small screens */
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .movie-card {
+    width: 150px; /* Adjust width for smaller screens */
+    height: 350px; /* Adjust height for smaller screens */
+  }
+
+  .movie-card img {
+    height: 200px; /* Adjust image height */
+  }
+
+  .buy-btn {
+    font-size: 0.8rem; /* Smaller button text */
   }
 }
