@@ -16,7 +16,7 @@ function MoviesView() {
 
   return (
     <div className="movies-view">
-      <Header />
+
       <Genres genres={selectedGenres} />
       <Footer />
     </div>
