@@ -9,11 +9,14 @@ body, html {
   line-height: 1.6;
   overflow-x: hidden;
   box-sizing: border-box;
+  height: 100%; /* Take up full height */
+  width: 100%;
 }
 
-#root{
+#root {
   background-color: #1e1e1e;
-  height: 228vh;
+  height: 100vh; /* Set height to the viewport height */
+  
 }
 
 .container {
